@@ -42,4 +42,4 @@ spec:
           - name: feign.url-account-service
             value: "account.global-bank.svc.cluster.local/account"
           - name: feign.url-auth-service
-            value: "authentication.global-bank.svc.cluster.local/auth-ms"
+            value: "authentication.global-bank.svc.cluster.local/auth"

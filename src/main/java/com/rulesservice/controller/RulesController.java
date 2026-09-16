@@ -18,8 +18,8 @@ import com.rulesservice.model.AccountInput;
 import com.rulesservice.model.RulesInput;
 import com.rulesservice.service.RulesService;
 
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -40,8 +40,8 @@ public class RulesController {
 	 * @throws MinimumBalanceException
 	 */
 	@PostMapping("/evaluateMinBal")
-	@ApiOperation(value="Evaluates Balance" , notes="Check Balance in the account if minimum then throw Minimum Balance Exception")
-	public ResponseEntity<?> evaluate(@ApiParam(value="Details of the account of the customer", required = true)@RequestBody RulesInput account)
+	@Operation(summary ="Evaluates Balance" , description ="Check Balance in the account if minimum then throw Minimum Balance Exception")
+	public ResponseEntity<?> evaluate(@Parameter(description ="Details of the account of the customer", required = true)@RequestBody RulesInput account)
 			throws MinimumBalanceException {
 		// Jwt token is checked
 		// check the accountId is Not null
@@ -61,8 +61,8 @@ public class RulesController {
 
 	// Service charges calculation
 	@PostMapping("/serviceCharges")
-	@ApiOperation(value="Calculates service charge",notes="Calculates the service charge based on the balance in account")
-	public ResponseEntity<?> serviceCharges(@ApiParam(value="token for authentication passed in header")@RequestHeader("Authorization") String token) {
+	@Operation(summary ="Calculates service charge", description ="Calculates the service charge based on the balance in account")
+	public ResponseEntity<?> serviceCharges(@Parameter(description ="token for authentication passed in header")@RequestHeader("Authorization") String token) {
 		// Jwt token is checked
 		rulesService.hasPermission(token);
 		

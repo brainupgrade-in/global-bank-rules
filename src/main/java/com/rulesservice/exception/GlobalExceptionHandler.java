@@ -1,6 +1,5 @@
 package com.rulesservice.exception;
 
-
 import java.net.ConnectException;
 import java.time.LocalDateTime;
 
@@ -14,7 +13,6 @@ import org.springframework.web.context.request.WebRequest;
 import com.rulesservice.model.ErrorDetails;
 
 import feign.FeignException;
-
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {

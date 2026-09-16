@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import com.rulesservice.model.AppUser;
 import com.rulesservice.model.AuthenticationResponse;
 
-
-
 @FeignClient(name = "auth-service", url = "${feign.url-auth-service}")
 @Component
 public interface AuthorizationFeign {
@@ -33,7 +31,5 @@ public interface AuthorizationFeign {
 	@GetMapping("/role/{id}")
 	public String getRole(@PathVariable("id") String id) ;
 	
-
-
 
 }

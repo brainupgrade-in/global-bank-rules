@@ -58,6 +58,5 @@ public class RulesServiceImpl implements RulesService {
 		return response;
 	}
 
-
 	
 }
